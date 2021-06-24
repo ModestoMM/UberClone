@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.modesto.uberclone">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activitys.driver.HistoryBookingDetailDriverActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activitys.client.HistoryBookingDetailClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.driver.HistoryBookingDriverActivity"
+            android:parentActivityName=".Activitys.MapDriverActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.client.HistoryBookingClientActivity"
+            android:parentActivityName=".Activitys.MapClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.driver.UpdateProfileDriverActivity"
+            android:parentActivityName=".Activitys.MapDriverActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.client.UpdateProfileActivity"
+            android:parentActivityName=".Activitys.MapClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.driver.NotificationBookingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.client.CalificationDriverActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.driver.CalificationClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.driver.MapDriverBookingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.client.MapClienBookingActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".receiver.AcceptReceiver"
+            android:enabled="true" />
+        <receiver
+            android:name=".receiver.CancelReceiber"
+            android:enabled="true" />
+
+        <service android:name=".services.MyFirebaseMessagingClient">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Activitys.client.RequestDriverActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.client.DetailRequestActivity"
+            android:parentActivityName=".Activitys.MapClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.MapDriverActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.MapClientActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.driver.RegisterDriverActivity"
+            android:parentActivityName=".Activitys.SelectOptionAuthActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.LoginActivity"
+            android:parentActivityName=".Activitys.SelectOptionAuthActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.client.RegisterActivity"
+            android:parentActivityName=".Activitys.SelectOptionAuthActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitys.SelectOptionAuthActivity"
+            android:parentActivityName=".Activitys.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activitys.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api" />
+    </application>
+
+</manifest>
